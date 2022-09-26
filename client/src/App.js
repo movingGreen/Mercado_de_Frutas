@@ -1,34 +1,31 @@
-import { useState, useEffect } from "react";
-import Axios from "axios";
-import "./MercadoDeFrutas";
-import MercadoDeFrutas from "./MercadoDeFrutas";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavLinks from "./Componentes/NavLinks";
+import Carrinho from "./Paginas/Carrinho";
+import Erro from "./Paginas/Erro";
+import Inicio from "./Paginas/Inicio";
 
-function App() {
-  const [listaDeFrutas, setlistaDeFrutas] = useState([]);
-
-  useEffect(() => {
-    Axios.get("http://localhost:3001/listaDeFrutas").then((response) => {
-      setlistaDeFrutas(response.data);
-      console.log(listaDeFrutas);
-    });
-  }, []);
-
+export default function App() {
   return (
-    <div className="container text-center">
-      <h1>Mercado de Frutas</h1>
-      <hr />
-      <div className="row row-cols-5">
-        {listaDeFrutas.map((fruta) => {
-          return (
-            <MercadoDeFrutas
-              key={fruta.id}
-              fruta={fruta}
-            />
-          );
-        })}
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<NavLinks />}>
+          <Route
+            index
+            element={<Inicio />}
+          />
+          <Route
+            path="Carrinho"
+            element={<Carrinho />}
+          />
+          <Route
+            path="*"
+            element={<Erro />}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

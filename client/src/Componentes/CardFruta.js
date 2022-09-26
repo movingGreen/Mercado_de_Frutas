@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MercadoDeFrutas({ fruta }) {
+export default function CardFruta({ fruta }) {
   return (
     <div className="col">
       <div className="card">
