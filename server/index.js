@@ -1,8 +1,8 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
 const https = require("https");
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 
@@ -25,5 +25,5 @@ app.get("/listaDeFrutas", (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log("servidor rodando na porta 3001 supimpa");
+  console.log("servidor rodando na porta 3001");
 });

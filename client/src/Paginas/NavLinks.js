@@ -1,8 +1,6 @@
-import React from "react";
-
 import { Outlet, Link } from "react-router-dom";
 
-export default function NavLinks() {
+const NavLinks = () => {
   return (
     <>
       <nav>
@@ -19,4 +17,6 @@ export default function NavLinks() {
       <Outlet />
     </>
   );
-}
+};
+
+export default NavLinks;
