@@ -7,23 +7,12 @@ export default function MercadoDeFrutas() {
   const [listaDeFrutas, setlistaDeFrutas] = useState([]);
 
   useEffect(() => {
-    const listaDeFrutasSalvas = JSON.parse(
-      localStorage.getItem(CHAVE_LISTA_FRUTAS)
-    );
-
-    if (listaDeFrutasSalvas) {
-      setlistaDeFrutas(listaDeFrutasSalvas);
-    } else {
-      Axios.get("http://localhost:3001/listaDeFrutas").then((response) => {
-        setlistaDeFrutas(response.data);
-        console.log(listaDeFrutas);
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem(CHAVE_LISTA_FRUTAS, JSON.stringify(listaDeFrutas));
-  }, [listaDeFrutas]);
+      Axios.get("http://localhost:3001/listaDeFrutas")
+        .then((response) => {
+          setlistaDeFrutas(response.data);
+          console.log(listaDeFrutas);
+        });
+    }, []);
 
   return (
     <div className="container text-center">
