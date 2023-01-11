@@ -24,6 +24,7 @@ export default function MercadoDeFrutas() {
             <CardFrutas
               key={fruta.id}
               fruta={fruta}
+              
             />
           );
         })}
