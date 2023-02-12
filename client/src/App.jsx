@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Carrinho from "./paginas/Carrinho";
-import InformacaoFruta from "./paginas/InformacaoFruta";
-import MercadoDeFrutas from "./paginas/MercadoDeFrutas";
+import Carrinho from "./Paginas/Carrinho";
+import InformacaoFruta from "./Paginas/InformacaoFruta";
+import MercadoDeFrutas from "./Paginas/MercadoDeFrutas";
 import Navegador from "./Componentes/Navegador";
-import PaginaErro from "./paginas/PaginaErro";
+import PaginaErro from "./Paginas/PaginaErro";
 
 export default function App() {
   return (
